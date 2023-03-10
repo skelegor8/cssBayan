@@ -1,0 +1,97 @@
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+
+:root{
+  --floral-white: #FFFCF2;
+  --timberwolf: #CCC5B9;
+  --black-olive: #403D39;
+  --eerie-black: #252422;
+  --flame: #EB5E28;
+}
+
+body{
+  background-color: var(--floral-white);
+  color: var(--eerie-black);
+}
+
+
+.bayan__container{
+  width: 80%;
+  margin: 1rem auto;
+}
+.mem__content{
+  cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
+  height: 0;
+  background-color: var(--timberwolf);
+  box-sizing: border-box;
+  transition: 0.5s;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bayan__container .mem__content img{
+  margin: 0 auto;
+}
+
+.bayan__container label{
+  cursor: pointer;
+  background-color: var(--timberwolf);
+  display: block;
+  padding: 15px 20px;
+  width: 100%;
+  font-weight: 300;
+  box-sizing: border-box;
+  z-index: 100;
+  font-size: 18px;
+  margin: 0 0 5px;
+  transition: .35s;
+}
+
+.bayan__container label:hover{
+  color: var(--flame);
+}
+
+.bayan__container input{
+  display: none;
+}
+
+
+.bayan__container input:checked + label{
+  background-color: var(--timberwolf);
+  color: var(--flame);
+}
+
+.bayan__container input:checked + label + .mem__content {
+  height: auto;
+  margin-top: -1em;
+  padding: 1em 1em 2em;
+}
+
+.bayan__container input:hover + label + .mem__content {
+  height: auto;
+  margin-top: -1em;
+  padding: 1em 1em 2em;
+}
+
+.mem__content:hover {
+  height: auto;
+  margin-top: -1em;
+  padding: 1em 1em 2em;
+}
+
