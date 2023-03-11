@@ -27,6 +27,13 @@ body{
   color: var(--eerie-black);
 }
 
+.checkbox{
+  display: none;
+}
+
+.radio{
+  display: block;
+}
 
 .bayan__container{
   width: 80%;
@@ -38,60 +45,69 @@ body{
   margin: 0 auto;
   height: 0;
   background-color: var(--timberwolf);
-  box-sizing: border-box;
   transition: 0.5s;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.bayan__container .mem__content img{
-  margin: 0 auto;
+
+.bayan__item{
+  border: 0.01em solid var(--black-olive);
+}
+.mem__content img{
+  margin: 2em auto;
 }
 
-.bayan__container label{
+.mem__title{
   cursor: pointer;
   background-color: var(--timberwolf);
   display: block;
-  padding: 15px 20px;
+  padding: 0.5em 1em;
   width: 100%;
-  font-weight: 300;
-  box-sizing: border-box;
-  z-index: 100;
   font-size: 18px;
-  margin: 0 0 5px;
   transition: .35s;
 }
 
-.bayan__container label:hover{
-  color: var(--flame);
-}
-
-.bayan__container input{
+input{
   display: none;
 }
 
-
-.bayan__container input:checked + label{
-  background-color: var(--timberwolf);
+input:checked ~ .mem__title{
+  background-color: var(--black-olive);
   color: var(--flame);
 }
 
-.bayan__container input:checked + label + .mem__content {
+input:checked ~.mem__content {
   height: auto;
-  margin-top: -1em;
-  padding: 1em 1em 2em;
 }
 
-.bayan__container input:hover + label + .mem__content {
-  height: auto;
-  margin-top: -1em;
-  padding: 1em 1em 2em;
+
+
+@media (min-width: 821px) {
+  label:hover ~ .mem__content {
+    height: auto;
+  }
+  
+  .mem__content:hover {
+    height: auto;
+  }
+  
+  .bayan__item:hover{
+    color: var(--flame);
+  }
+  .mem__title:hover {
+    color: var(--flame);
+  }
 }
 
-.mem__content:hover {
-  height: auto;
-  margin-top: -1em;
-  padding: 1em 1em 2em;
-}
 
+@media (max-width: 821px) {
+  .checkbox{
+  display: block;
+  }
+
+  .radio{
+    display: none;
+  }
+}
