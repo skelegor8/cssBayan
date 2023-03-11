@@ -40,22 +40,25 @@ body{
   width: 80%;
   margin: 1rem auto;
 }
+
 .mem__content{
   cursor: pointer;
   width: 100%;
   margin: 0 auto;
   height: 0;
   background-color: var(--timberwolf);
-  transition: 0.5s ease;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s;
 }
+
 
 .bayan__item{
   border: 0.01em solid var(--black-olive);
 }
+
 .mem__content img{
   margin: 2em auto;
 }
@@ -67,16 +70,18 @@ body{
   justify-content: space-between;
   padding: 0.5em 1em;
   width: 100%;
-  transition: 0.5s ease;
 }
+
 .title__text{
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .cross{
   width: 2em;
   height: 2em;
+  filter: brightness(0) saturate(100%) invert(13%) sepia(3%) saturate(724%) hue-rotate(11deg) brightness(102%) contrast(98%);
   background: url("./img/cross.svg") 0 0/100% auto no-repeat;
   transform: rotate(45deg);
   opacity: 0;
@@ -93,42 +98,34 @@ input:checked ~ .mem__title{
 }
 
 input:checked ~.mem__content {
-  height: auto;
-  transition: 0.5s ease;
+  height: 25em;
 }
+
 input:checked ~ .mem__title .cross{
   filter: brightness(0) saturate(100%) invert(48%) sepia(82%) saturate(3133%) hue-rotate(347deg) brightness(97%) contrast(90%);
   transform: rotate(0);
 }
 
-
-@media only screen and (min-width: 821px) {
+@media (min-width: 821px) {
   label:hover ~ .mem__content {
-    height: auto;
-    transition: 0.5s ease;
+    height: 25em;
   }
   .mem__content:hover {
-    height: auto;
-    transition: 0.5s ease;
+    height: 25em;
   }
-
   .bayan__item:hover{
     color: var(--flame);
-    transition: 0.5s ease;
   }
   .mem__title:hover {
     color: var(--flame);
-    transition: 0.5s ease;
   }
   .bayan__container:hover .bayan__item .mem__title .cross{
     opacity: 1;
-    transition: 0.3s ease;
   }
 }
 
 @media (max-width: 821px) {
   .cross{
-    transition: 0.3s ease;
     opacity: 1;
   }
   .checkbox{
