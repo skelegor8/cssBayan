@@ -25,6 +25,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 body{
   background-color: var(--floral-white);
   color: var(--eerie-black);
+  font-size: 18px;
 }
 
 .checkbox{
@@ -45,7 +46,7 @@ body{
   margin: 0 auto;
   height: 0;
   background-color: var(--timberwolf);
-  transition: 0.5s;
+  transition: 0.5s ease;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -62,11 +63,24 @@ body{
 .mem__title{
   cursor: pointer;
   background-color: var(--timberwolf);
-  display: block;
+  display: flex;
+  justify-content: space-between;
   padding: 0.5em 1em;
   width: 100%;
-  font-size: 18px;
-  transition: .35s;
+  transition: 0.5s ease;
+}
+.title__text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cross{
+  width: 2em;
+  height: 2em;
+  background: url("./img/cross.svg") 0 0/100% auto no-repeat;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: 0.3s ease;
 }
 
 input{
@@ -80,33 +94,46 @@ input:checked ~ .mem__title{
 
 input:checked ~.mem__content {
   height: auto;
+  transition: 0.5s ease;
+}
+input:checked ~ .mem__title .cross{
+  filter: brightness(0) saturate(100%) invert(48%) sepia(82%) saturate(3133%) hue-rotate(347deg) brightness(97%) contrast(90%);
+  transform: rotate(0);
 }
 
 
-
-@media (min-width: 821px) {
+@media only screen and (min-width: 821px) {
   label:hover ~ .mem__content {
     height: auto;
+    transition: 0.5s ease;
   }
-  
   .mem__content:hover {
     height: auto;
+    transition: 0.5s ease;
   }
-  
+
   .bayan__item:hover{
     color: var(--flame);
+    transition: 0.5s ease;
   }
   .mem__title:hover {
     color: var(--flame);
+    transition: 0.5s ease;
+  }
+  .bayan__container:hover .bayan__item .mem__title .cross{
+    opacity: 1;
+    transition: 0.3s ease;
   }
 }
 
-
 @media (max-width: 821px) {
+  .cross{
+    transition: 0.3s ease;
+    opacity: 1;
+  }
   .checkbox{
   display: block;
   }
-
   .radio{
     display: none;
   }
