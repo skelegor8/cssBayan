@@ -30,17 +30,10 @@ body{
   font-weight: 500;
 }
 
-.checkbox{
-  display: none;
-}
-
-.radio{
-  display: block;
-}
-
 .bayan__container{
   width: 45%;
   margin: 1em auto;
+  transition: all 0.3s;
 }
 
 .mem__content{
@@ -115,10 +108,7 @@ input:checked ~ .mem__title .cross{
   .mem__content:hover {
     height: 28em;
   }
-  .bayan__item:hover{
-    color: var(--flame);
-  }
-  .mem__title:hover {
+  .bayan__container:hover{
     color: var(--flame);
   }
   .bayan__container:hover .bayan__item .mem__title .cross{
@@ -130,7 +120,6 @@ input:checked ~ .mem__title .cross{
     width: 70%;
   }
 }
-
 
 @media (max-width: 821px) {
   body{
@@ -145,12 +134,7 @@ input:checked ~ .mem__title .cross{
   .cross{
     opacity: 1;
   }
-  .checkbox{
-  display: block;
-  }
-  .radio{
-    display: none;
-  }
+
 }
 
 @media (max-width: 769px) {
