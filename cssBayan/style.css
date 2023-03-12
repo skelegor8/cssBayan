@@ -26,6 +26,8 @@ body{
   background-color: var(--floral-white);
   color: var(--eerie-black);
   font-size: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
 }
 
 .checkbox{
@@ -98,7 +100,7 @@ input:checked ~ .mem__title{
 }
 
 input:checked ~.mem__content {
-  height: 25em;
+  height: 28em;
 }
 
 input:checked ~ .mem__title .cross{
@@ -108,10 +110,10 @@ input:checked ~ .mem__title .cross{
 
 @media (min-width: 821px) {
   label:hover ~ .mem__content {
-    height: 25em;
+    height: 28em;
   }
   .mem__content:hover {
-    height: 25em;
+    height: 28em;
   }
   .bayan__item:hover{
     color: var(--flame);
@@ -123,10 +125,19 @@ input:checked ~ .mem__title .cross{
     opacity: 1;
   }
 }
+@media (max-width: 1025px) {
+  .bayan__container{
+    width: 70%;
+  }
+}
+
 
 @media (max-width: 821px) {
   body{
     font-size: 1.2em;
+  }
+  img{
+    width: 90%;
   }
   .bayan__container{
     width: 25em;
@@ -142,9 +153,12 @@ input:checked ~ .mem__title .cross{
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .bayan__container{
     width: 70%;
+  }
+  input:checked ~.mem__content {
+    height: 30em;
   }
 }
 
@@ -152,13 +166,13 @@ input:checked ~ .mem__title .cross{
   .bayan__container{
     width: 90%;
   }
-
-}
-@media (max-width: 376px) {
-  img{
-    width: 90%;
-  }
   input:checked ~.mem__content {
-    height: 20em;
+    height: 27em;
+  }
+}
+
+@media (max-width: 376px) {
+  body{
+    font-size: 0.9em;
   }
 }
